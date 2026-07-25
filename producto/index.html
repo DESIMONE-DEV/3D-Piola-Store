@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Producto — 3D Piola STORE</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="../index.html"><span>3D PIOLA STORE</span></a>
+    <button id="cart-btn" onclick="toggleCart()">
+    🛒 Carrito
+    <span id="cart-count">0</span>
+  </button>
+</header>
+
+<nav>
+  <a href="../index.html">Inicio</a>
+  <a href="../dummy13/index.html">Dummy 13</a>
+  <a href="../pokemon/index.html">Pokemon</a>
+  <a href="../minecraft/index.html">Minecraft</a>
+  <a href="../flexianimal/index.html">Flexi Animal</a>
+  <a href="../juegos/index.html">Juegos</a>
+  <a href="../figuras/index.html">Figuras</a>
+  <a href="../dragones/index.html">Dragones</a>
+  <a href="../dinosaurios/index.html">Dinosaurios</a>
+</nav>
+
+<div id="cart-panel">
+  <h2>🛒 Mi Carrito <button onclick="toggleCart()">✕</button></h2>
+  <ul id="cart-items"></ul>
+  <div class="cart-footer">
+    <div class="cart-total-row"><span>Total</span><span>$<span id="cart-total">0</span></span></div>
+    <button class="btn-wa" onclick="buildWhatsAppMsg()">💬 Pedir por WhatsApp</button>
+    <button class="btn-clear" onclick="clearCart()">🗑 Vaciar carrito</button>
+  </div>
+</div>
+
+<section class="hero">
+  <h1 id="prod-cat">Producto</h1>
+</section>
+
+<div class="volver-bar">
+  <a id="prod-back" class="btn-volver" href="../index.html">← Volver</a>
+</div>
+
+<div class="container">
+  <div class="product-detail">
+    <div class="product-detail-img">
+      <img id="prod-img" src="" alt="">
+    </div>
+    <div class="product-detail-info">
+      <h2 id="prod-nombre">Nombre del producto</h2>
+      <p class="price" id="prod-precio">$0</p>
+
+      <h4 id="prod-caract-titulo">Características</h4>
+      <ul id="prod-desc" class="feature-list"></ul>
+
+      <button class="add-btn" id="prod-add-btn">+ Agregar al carrito</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="social-links">
+    <!-- Reemplazá cada href="#" por el link real de tu página/perfil -->
+    <a class="btn-social" href="#" target="_blank" rel="noopener">📷 Instagram</a>
+    <a class="btn-social" href="#" target="_blank" rel="noopener">📘 Facebook</a>
+    <a class="btn-social" href="#" target="_blank" rel="noopener">🖨️ Cults3D</a>
+  </div>
+  <p class="footer-copy">© 2026 3D Piola STORE · Mar del Plata, Argentina</p>
+</footer>
+
+<script src="../cart.js"></script>
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+
+  const nombre    = params.get('nombre')    || 'Producto';
+  const precio    = Number(params.get('precio')) || 0;
+  const imgFile   = params.get('img')       || '';
+  const desc      = params.get('desc')      || '';
+  const cat       = params.get('cat')       || '';
+  const catnombre = params.get('catnombre') || '';
+
+  // Si "img" ya es una URL completa (http...) se usa tal cual.
+  // Si no, se arma la ruta relativa a la carpeta de la categoría,
+  // que es donde viven las imágenes de sus productos (../categoria/archivo.jpg).
+  const imgSrc = imgFile
+    ? (/^https?:\/\//i.test(imgFile) ? imgFile : `../${cat}/${imgFile}`)
+    : '';
+
+  document.title = `${nombre} — 3D Piola STORE`;
+
+  const imgEl = document.getElementById('prod-img');
+  imgEl.src = imgSrc;
+  imgEl.alt = nombre;
+
+  document.getElementById('prod-nombre').textContent = nombre;
+  document.getElementById('prod-precio').textContent = '$' + precio.toLocaleString('es-AR');
+  document.getElementById('prod-cat').textContent = catnombre || 'Producto';
+
+  const backLink = document.getElementById('prod-back');
+  backLink.href = cat ? `../${cat}/index.html` : '../index.html';
+  backLink.textContent = `← Volver a ${catnombre || 'la tienda'}`;
+
+  const descList = document.getElementById('prod-desc');
+  const caractTitulo = document.getElementById('prod-caract-titulo');
+  if (desc) {
+    desc.split('|').forEach(function (linea) {
+      const texto = linea.trim();
+      if (!texto) return;
+      const li = document.createElement('li');
+      li.textContent = texto;
+      descList.appendChild(li);
+    });
+  }
+  if (descList.children.length === 0) {
+    caractTitulo.style.display = 'none';
+  }
+
+  document.getElementById('prod-add-btn').addEventListener('click', function () {
+    addCart(nombre, precio, imgSrc);
+  });
+})();
+</script>
+</body>
+</html>

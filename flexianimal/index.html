@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexi Animal — 3D Piola STORE</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="../index.html"><span>3D PIOLA STORE</span></a>
+    <button id="cart-btn" onclick="toggleCart()">
+    🛒 Carrito
+    <span id="cart-count">0</span>
+  </button>
+</header>
+
+<nav>
+  <a href="../index.html">Inicio</a>
+  <a href="../dummy13/index.html">Dummy 13</a>
+  <a href="../pokemon/index.html">Pokemon</a>
+  <a href="../minecraft/index.html">Minecraft</a>
+  <a href="../flexianimal/index.html" class="active">Flexi Animal</a>
+  <a href="../juegos/index.html">Juegos</a>
+  <a href="../figuras/index.html">Figuras</a>
+  <a href="../dragones/index.html">Dragones</a>
+  <a href="../dinosaurios/index.html">Dinosaurios</a>
+</nav>
+
+<div id="cart-panel">
+  <h2>🛒 Mi Carrito <button onclick="toggleCart()">✕</button></h2>
+  <ul id="cart-items"></ul>
+  <div class="cart-footer">
+    <div class="cart-total-row"><span>Total</span><span>$<span id="cart-total">0</span></span></div>
+    <button class="btn-wa" onclick="buildWhatsAppMsg()">💬 Pedir por WhatsApp</button>
+    <button class="btn-clear" onclick="clearCart()">🗑 Vaciar carrito</button>
+  </div>
+</div>
+
+<section class="hero">
+  <h1>Flexi Animal</h1>
+  <p><!-- Completar bajada / descripción de la categoría --></p>
+</section>
+
+<div class="container">
+  <h2>Articulos disponibles</h2>
+
+  <!--
+    ══════════════════════════════════════════════════════════════
+    CÓMO CARGAR PRODUCTOS
+    Duplicá uno de los bloques <div class="card">...</div> de abajo
+    por cada producto y completá:
+      - src de la imagen (img): el archivo debe estar en ESTA MISMA
+        carpeta (junto a este index.html), ej: "foto1.jpg"
+      - alt de la imagen
+      - nombre en <h3>
+      - precio en data-precio y en el texto $
+      - los datos del onclick="verProducto(...)":
+          verProducto('Nombre del producto', precio, 'archivo_imagen.jpg',
+                       'Característica 1|Característica 2|Característica 3',
+                       'CAT_SLUG', 'CAT_NOMBRE')
+        (el nombre de archivo debe ser el MISMO que pusiste en src del img,
+         y las características van separadas por "|")
+      - los 3 parámetros de addCart('nombre', precio, 'archivo_imagen.jpg')
+        (botón "+ Agregar" para sumarlo al carrito directo desde el listado)
+    ══════════════════════════════════════════════════════════════
+  -->
+  <div class="products">
+
+    <div class="card">
+      <a class="card-link" onclick="verProducto('Nombre del producto',0,'','Característica 1|Característica 2|Característica 3','flexianimal','Flexi Animal')">
+        <!-- Reemplazá el src de la imagen y completá nombre / precio -->
+        <img src="" alt="Nombre del producto">
+        <div class="card-body">
+          <h3>Nombre del producto</h3>
+          <p class="price" data-precio="0">$0</p>
+        </div>
+      </a>
+      <button class="add-btn" onclick="addCart('Nombre del producto',0,'')">+ Agregar</button>
+    </div>
+
+    <div class="card">
+      <a class="card-link" onclick="verProducto('Nombre del producto',0,'','Característica 1|Característica 2|Característica 3','flexianimal','Flexi Animal')">
+        <!-- Reemplazá el src de la imagen y completá nombre / precio -->
+        <img src="" alt="Nombre del producto">
+        <div class="card-body">
+          <h3>Nombre del producto</h3>
+          <p class="price" data-precio="0">$0</p>
+        </div>
+      </a>
+      <button class="add-btn" onclick="addCart('Nombre del producto',0,'')">+ Agregar</button>
+    </div>
+
+    <div class="card">
+      <a class="card-link" onclick="verProducto('Nombre del producto',0,'','Característica 1|Característica 2|Característica 3','flexianimal','Flexi Animal')">
+        <!-- Reemplazá el src de la imagen y completá nombre / precio -->
+        <img src="" alt="Nombre del producto">
+        <div class="card-body">
+          <h3>Nombre del producto</h3>
+          <p class="price" data-precio="0">$0</p>
+        </div>
+      </a>
+      <button class="add-btn" onclick="addCart('Nombre del producto',0,'')">+ Agregar</button>
+    </div>
+
+    <div class="card">
+      <a class="card-link" onclick="verProducto('Nombre del producto',0,'','Característica 1|Característica 2|Característica 3','flexianimal','Flexi Animal')">
+        <!-- Reemplazá el src de la imagen y completá nombre / precio -->
+        <img src="" alt="Nombre del producto">
+        <div class="card-body">
+          <h3>Nombre del producto</h3>
+          <p class="price" data-precio="0">$0</p>
+        </div>
+      </a>
+      <button class="add-btn" onclick="addCart('Nombre del producto',0,'')">+ Agregar</button>
+    </div>
+
+
+  </div>
+</div>
+
+<footer>
+  <div class="social-links">
+    <!-- Reemplazá cada href="#" por el link real de tu página/perfil -->
+    <a class="btn-social" href="#" target="_blank" rel="noopener">📷 Instagram</a>
+    <a class="btn-social" href="#" target="_blank" rel="noopener">📘 Facebook</a>
+    <a class="btn-social" href="#" target="_blank" rel="noopener">🖨️ Cults3D</a>
+  </div>
+  <p class="footer-copy">© 2026 3D Piola STORE · Mar del Plata, Argentina</p>
+</footer>
+<script src="../cart.js"></script>
+</body>
+</html>
