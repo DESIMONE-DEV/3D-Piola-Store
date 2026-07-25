@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Piola</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html"><span>3D PIOLA STORE</span></a>
+    <button id="cart-btn" onclick="toggleCart()">
+    🛒 Carrito
+    <span id="cart-count">0</span>
+  </button>
+</header>
+
+<nav>
+  <a href="index.html" class="active">Inicio</a>
+  <a href="dummy13/index.html">Dummy 13</a>
+  <a href="pokemon/index.html">Pokemon</a>
+  <a href="minecraft/index.html">Minecraft</a>
+  <a href="flexianimal/index.html">Flexi Animal</a>
+  <a href="juegos/index.html">Juegos</a>
+  <a href="figuras/index.html">Figuras</a>
+  <a href="dragones/index.html">Dragones</a>
+  <a href="dinosaurios/index.html">Dinosaurios</a>
+</nav>
+
+<!-- PANEL CARRITO -->
+<div id="cart-panel">
+  <h2>🛒 Mi Carrito <button onclick="toggleCart()">✕</button></h2>
+  <ul id="cart-items"></ul>
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span>$<span id="cart-total">0</span></span>
+    </div>
+    <button class="btn-wa" onclick="buildWhatsAppMsg()">💬 Pedir por WhatsApp</button>
+    <button class="btn-clear" onclick="clearCart()">🗑 Vaciar carrito</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <img src="logo.jpg" alt="logo" class="logo">
+  <p>Coleccionables y Juegos en 3D · Envíos a todo Argentina</p>
+</section>
+
+<div class="container">
+  <h2>Nuestros Articulos</h2>
+  <div class="teams">
+
+    <div class="team-card">
+      <a class="card-link-img" href="dummy13/index.html"><img src="Dummy13.jpg" alt="Dummy 13"></a>
+      <div class="team-card-body">
+        <h3>Dummy 13</h3>
+        <p>Clasico, Starwars, Animes y más</p>
+        <a class="btn-team" href="dummy13/index.html">Ver Articulos</a>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <a class="card-link-img" href="pokemon/index.html"><img src="pokemon.jpg" alt="Pokemon"></a>
+      <div class="team-card-body">
+        <h3>Pokemon</h3>
+        <p>Articulados, fijos y más</p>
+        <a class="btn-team" href="pokemon/index.html">Ver Articulos</a>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <a class="card-link-img" href="minecraft/index.html"><img src="minecraft.jpg" alt="Minecraft"></a>
+      <div class="team-card-body">
+        <h3>Minecraft</h3>
+        <p>Muñecos Articulados</p>
+        <a class="btn-team" href="minecraft/index.html">Ver Articulos</a>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <a class="card-link-img" href="flexianimal/index.html"><img src="animalitos.jpg" alt="Flexi Animal"></a>
+      <div class="team-card-body">
+        <h3>Flexi Animal</h3>
+        <p>Ovejas,zorros,pulpos,axolotes y muchos mas...</p>
+        <a class="btn-team" href="flexianimal/index.html">Ver Articulos</a>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <a class="card-link-img" href="juegos/index.html"><img src="" alt="Juegos"></a>
+      <div class="team-card-body">
+        <h3>Juegos</h3>
+        <p>Juegos de ingenio , rompecabeza y mas....</p>
+        <a class="btn-team" href="juegos/index.html">Ver Articulos</a>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <a class="card-link-img" href="figuras/index.html"><img src="" alt="Figuras"></a>
+      <div class="team-card-body">
+        <h3>Figuras</h3>
+        <p>Figuras de series y anime</p>
+        <a class="btn-team" href="figuras/index.html">Ver Articulos</a>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <a class="card-link-img" href="dragones/index.html"><img src="" alt="Dragones"></a>
+      <div class="team-card-body">
+        <h3>Dragones</h3>
+        <p>Dragones chinos , huevos de dragon</p>
+        <a class="btn-team" href="dragones/index.html">Ver Articulos</a>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <a class="card-link-img" href="dinosaurios/index.html"><img src="" alt="Dinosaurios"></a>
+      <div class="team-card-body">
+        <h3>Dinosaurios</h3>
+        <p>Dinos Fijos y articulados</p>
+        <a class="btn-team" href="dinosaurios/index.html">Ver Articulos</a>
+      </div>
+    </div>
+
+  </div>
+
+  <br><br>
+  <h2>📞 Cómo comprar</h2>
+  <p>✔ Elegí producto y agregalo al carrito.</p>
+  <p>✔ Cuando terminés, hacé clic en <strong>Pedir por WhatsApp</strong> y te llega el detalle listo para enviar.</p>
+  <p>✔ Pagás por Mercado Pago y coordinamos el envío.</p>
+</div>
+
+<footer>
+  <div class="social-links">
+    <!-- Reemplazá cada href="#" por el link real de tu página/perfil -->
+    <a class="btn-social" href="#" target="_blank" rel="noopener">📷 Instagram</a>
+    <a class="btn-social" href="#" target="_blank" rel="noopener">📘 Facebook</a>
+    <a class="btn-social" href="#" target="_blank" rel="noopener">🖨️ Cults3D</a>
+  </div>
+  <p class="footer-copy">© 2026 3D Piola STORE · Mar del Plata, Argentina</p>
+</footer>
+
+<script src="cart.js"></script>
+</body>
+</html>
