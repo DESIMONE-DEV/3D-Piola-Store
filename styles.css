@@ -1,4 +1,6 @@
-/* ════════════════════════════════════════════════════════════════════════
+
+
+ /* ════════════════════════════════════════════════════════════════════════
    3D PIOLA STORE — design tokens
    Paleta: azul eléctrico sobre navy casi negro, con un acento ámbar
    (el brillo del filamento/hotend) reservado para precios y detalles.
@@ -6,7 +8,7 @@
                + Inter (texto, muy legible en español).
    Firma visual: líneas horizontales finas que evocan las capas de una
    impresión 3D — aparecen en el panel del hero y como separador de
-   secciones, no se repiten en todos lados.
+   secciones, no se repiten en todos lados.)
    ════════════════════════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap');
